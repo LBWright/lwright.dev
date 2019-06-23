@@ -54,8 +54,8 @@ const Bio = () => {
         }}
       />
       <p>
-        I'm <strong>{author}</strong>. I live build software in Houston. Python
-        and Javascript are my thinking languages. I also own a winery.
+        I'm <strong>{author}</strong>. I build software in Houston. Python and
+        Javascript are my thinking languages. I also own a winery.
       </p>
     </div>
   )
