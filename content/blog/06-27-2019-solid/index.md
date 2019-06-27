@@ -12,9 +12,29 @@ When something smells in your house, it's pretty easy to find the cause. You ope
 
 #### Rigidity
 
-> Rigidity is the tendency for software to be difficult to change - Robert C. Martin
+> Rigidity is the tendency for software to be difficult to change - Robert C. Martin (RCM)
 
-Does your codebase have files, folders, or classes that you just don't touch? Every change to one class or function thunders forth with an avalanche of bugs and defects. It may have been an easy fix, I mean - You did tell everyone at standup that it would only take a couple days.
+Does your codebase have files, folders, or classes that you just don't touch? Every change to one class or function thunders forth with an avalanche of bugs and defects. It may have been an easy fix, I mean - You did tell everyone at standup that it would only take a couple days. Small modules turn into behemoths and simple changes to marathons. When software behaves this way, managers fear to allow engineers to fix non-critical problems. But even if managers let their devs fix those issues, the codebase can turn into a roach motel. Engineers may check in but don't check out.
+
+When these fears become so accute that the team refuses to allow changes to software, rigidity sets in. We have officially moved from design defficiency to issue aversion.
+
+#### Fragility
+
+> Fragility is the tendency of the software to break in many places every time it is changed. - RCM
+
+It seems like we hear it all the time, "I'm not sure how this is broken, I didn't touch anything over here". As time moves on, the more fragile the codebase becomes. Every fix only seems to break something else, or introduces new issues. The team is tired of fixing each other's bugs and the code review becomes much more intensive. Developers lose credibility. Managers pull their hair out. Releases get pushed back.
+
+#### Immobility
+
+> Immobility is the inability to reuse software from other projects or from parts of the same project - RCM
+
+We've written the same thing over and over again but it never quite satisfies the requirements of this project. We want to build reusable tool but just don't have the time. So we extend and mangle and finagle previously written code into our new system but it has too much baggage to be dependable. Or we find that it's too dependent on another chunk of code. After a few weeks of trying to make it work, we simply just rewrite it.
+
+#### Viscosity
+
+This comes in two flavors: design and environment. When _design_ is viscous, changes to the codebase are slow and executing minute tasks are tedious. It's not clear what variables are named so it takes a while to understand code for maintainence. Maybe modules are hidden. Or a too strict style guide is implemented. Awkward file structures can even lead to design viscosity. The _environment_ is viscous when the reflected changes take ages to be reflected in the codebase. Sometimes this happens through poor code review or a lack of collaboration. Sometimes developers may have to copy files from one directory to another, then run a series of manual build commands to see a change locally. Long compile times may also result in a viscous environment.
+
+These four symptoms are the red flags of poor architecture. When our applications suffer from one (or several) of them, we know that it's a matter of time before they rot into obscurity. As mentioned before, these aren't typically caused by idiots or monkeys typing code. There are a whole host of reasons why a system degrades. By no means do I mean to lash the individuals responsible for powering the future. While these problems may be introduced unknowingly or by the changing landscape of our development environments, it is up to the developers - the command-line heroes - to make the world right again. But how?
 
 ## SOLID - Engineering for the future
 
