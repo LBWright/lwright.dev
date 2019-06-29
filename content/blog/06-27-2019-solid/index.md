@@ -206,7 +206,35 @@ class Printer(Machine):
         pass # custom implementation here
 ```
 
-In this example, we've extended the Machine's base class and overwritten the print method, but the printer also has access to two methods that it will never use. They'll actually throw an error in our program. Here, the user has the _ability_ to utilize the `fax` method but can't actually execute it. We don't want consumers to be confused by the fact that our printer has access to the `fax` method but can't implement it. So instead, we create our base class to be as minimal as we can with only properties and methods necessary for all extensions of the class.
+In this example, we've extended the Machine's base class and overwritten the print method, but the printer also has access to two methods that it will never use. They'll actually throw an error in our program.
+
+```py
+printer = Printer()
+printer.fax('document.txt') # This would throw a not implemented error, leaving the consumer confused
+```
+
+Here, the user has the _ability_ to utilize the `fax` method but can't actually execute it. We don't want consumers to be confused by the fact that our printer has access to the `fax` method but can't implement it. So instead, we create our base class to be as minimal as we can with only properties and methods necessary for all extensions of the class. So we might instead create a printer class (instead of a machine _god class_)
+
+```py
+class Printer:
+    def print(self, document):
+        raise NotImplementedError
+
+class ScannerPrinter(Printer):
+    def print(self, document):
+        pass # custom implementation here
+    def scan(self, document):
+        pass
+```
+
+Here, if the user tried to use a `fax` method, it would be undefined rather than unimplemented.
+
+```py
+sp = ScannerPrinter()
+sp.fax('document.txt') # fax is not defined
+```
+
+Both of these would blow up if you called an unsupported method, but it's certainly easier to debug one over the other.
 
 #### (D)ependency Inversion Principle
 
