@@ -180,7 +180,7 @@ small = SizeSpec('small')
 small_gloves = glove_filter.filter(gloves, small)
 ```
 
-Now we don't need to modify our filters at all - like the first example, we can just extend and implement them. We can come up with a near infinite amount of filter for an infinite amount of gloves. And if we wanted to filter something else, like baseballs, we could use that as well.
+Now we don't need to modify our filters at all - like the first example, we can just extend and implement them. We can come up with a near infinite amount of filter for an infinite amount of gloves. And if we wanted to filter something else, like baseballs, we could use that as well. We'd just create another specification.
 
 #### (L)iskov Substitution Principle
 
