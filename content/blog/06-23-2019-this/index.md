@@ -34,10 +34,11 @@ Therefore, I wish to give to you. I have learned much since I picked up my first
 ### Finally, this is the tech that I love:
 
 - Python
+- Django
+- Flask
 - JavaScript
 - NodeJS
 - React
-- WebAssembly
 - Rust
 
 If you've made it to the end, then I hope something I've written has tugged at you. Over the course of this blog, I hope that the experience I've gained and the knowledge I've hoarded will propel you forward into the world with passion and vigor.
